@@ -20,7 +20,9 @@ function reverseInt(n) {
 
   return parseInt(reversedChars) * Math.sign(n)
   // turn reversedChars from integer to string
-  // use Math.sign(n) to maintain the original mathematical sign (e.g. negative)
+  // use Math.sign(n) to times the reversed number by the mathematical symbol of the
+  // original number.  This maintains the original mathematical sign & accounts for
+  // negative number edge cases.
 }
 
 module.exports = reverseInt
