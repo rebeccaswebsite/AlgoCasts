@@ -46,12 +46,13 @@ function palindrome(str) {
   // away from the end as it, but in the other direction.
 
   // This mirror character can be picked out by finding the element
-  // in the original string with the correct index. The index can be found by
+  // in the original string with the corresponding index. The index can be found by
   // finding the length of the original string, then subtracting the index of
-  // the other character and adding one. E.g. if we are comparing char at index
+  // the other character and subtracting one. E.g. if we are comparing char at index
   // 0 with the string 'hello' this is how we would find the index of the mirror
-  // char: the string length is 5 so minus the original index from this, i.e. 1,
+  // char: the string length is 5 so minus the original index from this, i.e. 0,
   // then minus one again (this needs to be done as array index starts at 0)
+  // which means the index we need is 4
 
   // Now you have the index of the mirror letter it can easily be found and
   // compared with its corresponding letter
