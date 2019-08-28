@@ -27,12 +27,19 @@
 //   return str === reversed
 // }
 
-function palindrome(str) {
-  const reversed = str.split("").reduce((accumulator, element) => {
-    return element + accumulator
-  }, "")
+// function palindrome(str) {
+//   const reversed = str.split("").reduce((accumulator, element) => {
+//     return element + accumulator
+//   }, "")
 
-  return str === reversed
+//   return str === reversed
+// }
+
+function palindrome(str) {
+  return str.split("").every((char, i) => char === str[str.length - i - 1])
+  // this is a less preferable solution because it has double comparison,
+  // it compares the first to the last and the last to the first etc.
+  // so it is doing twice as much as it needs to do
 }
 
 module.exports = palindrome
