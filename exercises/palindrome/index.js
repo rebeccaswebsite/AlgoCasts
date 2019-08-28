@@ -17,12 +17,20 @@
 //   )
 // }
 
-function palindrome(str) {
-  let reversed = ""
+// function palindrome(str) {
+//   let reversed = ""
 
-  for (let element of str) {
-    reversed = element + reversed
-  }
+//   for (let element of str) {
+//     reversed = element + reversed
+//   }
+
+//   return str === reversed
+// }
+
+function palindrome(str) {
+  const reversed = str.split("").reduce((accumulator, element) => {
+    return element + accumulator
+  }, "")
 
   return str === reversed
 }
