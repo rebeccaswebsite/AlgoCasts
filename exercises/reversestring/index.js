@@ -39,7 +39,10 @@
 
 function reverse(str) {
   if (str === "") return ""
+  // if string is empty return empty string, this is our base condition
   return reverse(str.substring(1)) + str[0]
+  // recursively call reverse function with all of the original string, minus the first letter
+  // add the first letter of the string to the end of the string
 }
 
 module.exports = reverse
