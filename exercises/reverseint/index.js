@@ -22,7 +22,7 @@ function reverseInt(n) {
   // turn reversedChars from integer to string
   // use Math.sign(n) to times the reversed number by the mathematical symbol of the
   // original number.  This maintains the original mathematical sign & accounts for
-  // negative number edge cases.
+  // negative number edge cases, since it returns 1 or -1.
 }
 
 module.exports = reverseInt
