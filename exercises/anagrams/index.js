@@ -14,28 +14,45 @@ function charsOnly(str) {
 // helper function to remove any non a-z chars from
 // strings and make string lowercase
 
-function charMap(str) {
-  const charsMap = {}
+// function charMap(str) {
+//   const charsMap = {}
 
-  for (let char of charsOnly(str)) {
-    charsMap[char] ? charsMap[char]++ : (charsMap[char] = 1)
-  }
+//   for (let char of charsOnly(str)) {
+//     charsMap[char] ? charsMap[char]++ : (charsMap[char] = 1)
+//   }
 
-  return charsMap
-}
-// helper function to create a character map for a string,
-// to keep count of how many of each character there are
+//   return charsMap
+// }
+// // helper function to create a character map for a string,
+// // to keep count of how many of each character there are
 
+// function anagrams(stringA, stringB) {
+//   const charMapA = charMap(stringA)
+//   const charMapB = charMap(stringB)
+
+//   for (let char in charMapA) {
+//     return (
+//       Object.keys(charMapA).length === Object.keys(charMapB).length &&
+//       charMapA[char] === charMapB[char]
+//     )
+//   }
+// }
+
+// ALTERNATE SOlUTION
 function anagrams(stringA, stringB) {
-  const charMapA = charMap(stringA)
-  const charMapB = charMap(stringB)
+  const newStringA = charsOnly(stringA)
+  const newStringB = charsOnly(stringB)
 
-  for (let char in charMapA) {
-    return (
-      Object.keys(charMapA).length === Object.keys(charMapB).length &&
-      charMapA[char] === charMapB[char]
-    )
-  }
+  return (
+    newStringA
+      .split("")
+      .sort()
+      .join() ===
+    newStringB
+      .split("")
+      .sort()
+      .join()
+  )
 }
 
 module.exports = anagrams
