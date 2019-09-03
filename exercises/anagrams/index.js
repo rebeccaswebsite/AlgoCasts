@@ -8,6 +8,34 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) {}
+function charsOnly(str) {
+  return str.replace(/[^\w]/g, "").toLowerCase()
+}
+// helper function to remove any non a-z chars from
+// strings and make string lowercase
 
-module.exports = anagrams;
+function charMap(str) {
+  const charsMap = {}
+
+  for (let char of charsOnly(str)) {
+    charsMap[char] ? charsMap[char]++ : (charsMap[char] = 1)
+  }
+
+  return charsMap
+}
+// helper function to create a character map for a string,
+// to keep count of how many of each character there are
+
+function anagrams(stringA, stringB) {
+  const charMapA = charMap(stringA)
+  const charMapB = charMap(stringB)
+
+  for (let char in charMapA) {
+    return (
+      Object.keys(charMapA).length === Object.keys(charMapB).length &&
+      charMapA[char] === charMapB[char]
+    )
+  }
+}
+
+module.exports = anagrams
